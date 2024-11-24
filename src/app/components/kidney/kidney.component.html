@@ -1,0 +1,719 @@
+<section id="kidney" class="py-5 mt-5">
+  <div class="container">
+    <div class="title position-relative d-flex mb-5">
+      <span><i class="fa-solid fa-file-signature fa-2xl"></i></span>
+      <h2>KIDNEY TEST FORM</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-5">
+        <div class="img shadow mb-5 rounded-4">
+          <img
+            class="w-100 rounded-4"
+            src="./assets/images/kidney.jpg"
+            alt="kidney"
+          />
+        </div>
+        <div class="body position-relative">
+          <p class="text-center">
+            Kidney disease occurs when the kidneys are damaged and cannot
+            function properly. Causes include diabetes, high blood pressure,
+            genetic factors, infections, or certain medications. It can progress
+            through various stages, leading to complications such as chronic
+            kidney disease (CKD), kidney failure, or end-stage renal disease
+            (ESRD) requiring dialysis or transplantation. Symptoms may include
+            fatigue, swelling, changes in urine output, high blood pressure, and
+            electrolyte imbalances. Early detection, managing underlying
+            conditions, adopting a healthy lifestyle, and medication can help
+            slow the progression of kidney disease. Treatment options for
+            advanced stages may include dialysis or transplantation. Education
+            about kidney health, maintaining a balanced diet, staying hydrated,
+            and avoiding nephrotoxic substances are important for prevention and
+            effective management of kidney disease.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <form
+          class="py-3 rounded-4"
+          [formGroup]="kidneyData"
+          (ngSubmit)="sendData()"
+        >
+          <div class="row gx-0">
+            <div class="col-md-6">
+              <div class="form-item d-flex flex-column align-items-center mb-3">
+                <label for="age" class="mb-2 fw-bold w-75">Age:</label>
+                <input
+                  formControlName="age"
+                  type="number"
+                  id="age"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('age')?.touched &&
+                    kidneyData.get('age')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('age')?.getError('required')"
+                    class="m-0"
+                  >
+                    Age Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="Bp" class="mb-2 fw-bold w-75">Bp:</label>
+                <input
+                  formControlName="blood_pressure"
+                  type="text"
+                  id="Bp"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('blood_pressure')?.touched &&
+                    kidneyData.get('blood_pressure')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('blood_pressure')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    Bp Is Required
+                  </p>
+                  <p
+                    *ngIf="
+                      kidneyData.get('blood_pressure')?.getError('pattern')
+                    "
+                    class="m-0"
+                  >
+                    Bp Must Be number1 / number2
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="specific_gravity" class="mb-2 fw-bold w-75"
+                  >specific_gravity:</label
+                >
+                <input
+                  formControlName="specific_gravity"
+                  type="number"
+                  id="specific_gravity"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('specific_gravity')?.touched &&
+                    kidneyData.get('specific_gravity')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('specific_gravity')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    specific gravity Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="total_protein" class="mb-2 fw-bold w-75"
+                  >total_protein:</label
+                >
+                <input
+                  formControlName="total_protein"
+                  type="number"
+                  id="total_protein"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('total_protein')?.touched &&
+                    kidneyData.get('total_protein')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('total_protein')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    total_protein Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="AL" class="mb-2 fw-bold w-75">AL:</label>
+                <input
+                  formControlName="albumin"
+                  type="number"
+                  id="AL"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('albumin')?.touched &&
+                    kidneyData.get('albumin')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('albumin')?.getError('required')"
+                    class="m-0"
+                  >
+                    AL Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="red_blood_cells" class="mb-2 fw-bold w-75"
+                  >red blood cells:</label
+                >
+                <input
+                  formControlName="red_blood_cells"
+                  type="text"
+                  id="red_blood_cells"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('red_blood_cells')?.touched &&
+                    kidneyData.get('red_blood_cells')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('red_blood_cells')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    red blood cells Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="pus_cell" class="mb-2 fw-bold w-75"
+                  >pus_cell:</label
+                >
+                <input
+                  formControlName="pus_cell"
+                  type="text"
+                  id="pus_cell"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('pus_cell')?.touched &&
+                    kidneyData.get('pus_cell')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('pus_cell')?.getError('required')"
+                    class="m-0"
+                  >
+                    pus cell Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="pus_cell_clumps" class="mb-2 fw-bold w-75"
+                  >pus_cell_clumps:</label
+                >
+                <input
+                  formControlName="pus_cell_clumps"
+                  type="text"
+                  id="pus_cell_clumps"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('pus_cell_clumps')?.touched &&
+                    kidneyData.get('pus_cell_clumps')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('pus_cell_clumps')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    pus cell clumps Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="bacteria" class="mb-2 fw-bold w-75"
+                  >bacteria:</label
+                >
+                <input
+                  formControlName="bacteria"
+                  type="text"
+                  id="bacteria"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('bacteria')?.touched &&
+                    kidneyData.get('bacteria')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('bacteria')?.getError('required')"
+                    class="m-0"
+                  >
+                    bacteria Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="blood_glucose_random" class="mb-2 fw-bold w-75"
+                  >blood_glucose_random:</label
+                >
+                <input
+                  formControlName="blood_glucose_random"
+                  type="number"
+                  id="blood_glucose_random"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('blood_glucose_random')?.touched &&
+                    kidneyData.get('blood_glucose_random')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData
+                        .get('blood_glucose_random')
+                        ?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    blood glucose random Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="blood_urea" class="mb-2 fw-bold w-75"
+                  >blood_urea:</label
+                >
+                <input
+                  formControlName="blood_urea"
+                  type="number"
+                  id="blood_urea"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('blood_urea')?.touched &&
+                    kidneyData.get('blood_urea')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('blood_urea')?.getError('required')"
+                    class="m-0"
+                  >
+                    blood glucose random Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="serum_creatinine" class="mb-2 fw-bold w-75"
+                  >serum_creatinine:</label
+                >
+                <input
+                  formControlName="serum_creatinine"
+                  type="number"
+                  id="serum_creatinine"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('serum_creatinine')?.touched &&
+                    kidneyData.get('serum_creatinine')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('serum_creatinine')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    serum creatinine Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="sodium" class="mb-2 fw-bold w-75">sodium:</label>
+                <input
+                  formControlName="sodium"
+                  type="number"
+                  id="sodium"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('sodium')?.touched &&
+                    kidneyData.get('sodium')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('sodium')?.getError('required')"
+                    class="m-0"
+                  >
+                    sodium Is Required
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-item d-flex flex-column align-items-center mb-3">
+                <label for="potassium" class="mb-2 fw-bold w-75"
+                  >potassium:</label
+                >
+                <input
+                  formControlName="potassium"
+                  type="number"
+                  id="potassium"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('potassium')?.touched &&
+                    kidneyData.get('potassium')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('potassium')?.getError('required')"
+                    class="m-0"
+                  >
+                    potassium Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="haemoglobin" class="mb-2 fw-bold w-75"
+                  >haemoglobin:</label
+                >
+                <input
+                  formControlName="haemoglobin"
+                  type="number"
+                  id="haemoglobin"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('haemoglobin')?.touched &&
+                    kidneyData.get('haemoglobin')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('haemoglobin')?.getError('required')"
+                    class="m-0"
+                  >
+                    haemoglobin Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="packed_cell_volume" class="mb-2 fw-bold w-75"
+                  >packed_cell_volume:</label
+                >
+                <input
+                  formControlName="packed_cell_volume"
+                  type="number"
+                  id="packed_cell_volume"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('packed_cell_volume')?.touched &&
+                    kidneyData.get('packed_cell_volume')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('packed_cell_volume')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    packed cell volume Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="white_blood_cell_count" class="mb-2 fw-bold w-75"
+                  >white_blood_cell_count:</label
+                >
+                <input
+                  formControlName="white_blood_cell_count"
+                  type="number"
+                  id="white_blood_cell_count"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('white_blood_cell_count')?.touched &&
+                    kidneyData.get('white_blood_cell_count')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData
+                        .get('white_blood_cell_count')
+                        ?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    white blood cell count Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="red_blood_cell_count" class="mb-2 fw-bold w-75"
+                  >red_blood_cell_count:</label
+                >
+                <input
+                  formControlName="red_blood_cell_count"
+                  type="number"
+                  id="red_blood_cell_count"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('red_blood_cell_count')?.touched &&
+                    kidneyData.get('red_blood_cell_count')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData
+                        .get('red_blood_cell_count')
+                        ?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    red blood cell count Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="gender" class="mb-2 fw-bold w-75">gender:</label>
+                <input
+                  formControlName="gender"
+                  type="text"
+                  id="gender"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('gender')?.touched &&
+                    kidneyData.get('gender')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('gender')?.getError('required')"
+                    class="m-0"
+                  >
+                    gender Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="hypertension" class="mb-2 fw-bold w-75"
+                  >hypertension:</label
+                >
+                <input
+                  formControlName="hypertension"
+                  type="text"
+                  id="hypertension"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('hypertension')?.touched &&
+                    kidneyData.get('hypertension')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('hypertension')?.getError('required')"
+                    class="m-0"
+                  >
+                    hypertension Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="diabetes_mellitus" class="mb-2 fw-bold w-75"
+                  >diabetes_mellitus:</label
+                >
+                <input
+                  formControlName="diabetes_mellitus"
+                  type="text"
+                  id="diabetes_mellitus"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('diabetes_mellitus')?.touched &&
+                    kidneyData.get('diabetes_mellitus')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData.get('diabetes_mellitus')?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    diabetes mellitus Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="coronary_artery_disease" class="mb-2 fw-bold w-75"
+                  >coronary_artery_disease:</label
+                >
+                <input
+                  formControlName="coronary_artery_disease"
+                  type="text"
+                  id="coronary_artery_disease"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('coronary_artery_disease')?.touched &&
+                    kidneyData.get('coronary_artery_disease')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="
+                      kidneyData
+                        .get('coronary_artery_disease')
+                        ?.getError('required')
+                    "
+                    class="m-0"
+                  >
+                    coronary artery disease Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="appetite" class="mb-2 fw-bold w-75"
+                  >appetite:</label
+                >
+                <input
+                  formControlName="appetite"
+                  type="text"
+                  id="appetite"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('appetite')?.touched &&
+                    kidneyData.get('appetite')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('appetite')?.getError('required')"
+                    class="m-0"
+                  >
+                    appetite Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="pedal_edema" class="mb-2 fw-bold w-75"
+                  >pedal_edema:</label
+                >
+                <input
+                  formControlName="pedal_edema"
+                  type="text"
+                  id="pedal_edema"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('pedal_edema')?.touched &&
+                    kidneyData.get('pedal_edema')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('pedal_edema')?.getError('required')"
+                    class="m-0"
+                  >
+                    pedal edema Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="form-item d-flex flex-column align-items-center my-3">
+                <label for="anemia" class="mb-2 fw-bold w-75">anemia:</label>
+                <input
+                  formControlName="anemia"
+                  type="text"
+                  id="anemia"
+                  class="form-control w-75 rounded-4"
+                />
+                <div
+                  *ngIf="
+                    kidneyData.get('anemia')?.touched &&
+                    kidneyData.get('anemia')?.errors
+                  "
+                  class="mt-1 rounded-4 alert alert-danger w-75"
+                >
+                  <p
+                    *ngIf="kidneyData.get('anemia')?.getError('required')"
+                    class="m-0"
+                  >
+                    anemia edema Is Required
+                  </p>
+                </div>
+              </div>
+              <div class="submit d-flex justify-content-center mt-5">
+                <button
+                  type="submit"
+                  [disabled]="kidneyData.invalid"
+                  class="btn rounded-4"
+                >
+                  Analize
+                  <span *ngIf="isLoad"
+                    ><i class="fa-solid fa-spinner fa-spin"></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div *ngIf="showResult" class="alert alert-secondary mt-5 rounded-4">
+          <h2 class="display-2 text-center">{{ result }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

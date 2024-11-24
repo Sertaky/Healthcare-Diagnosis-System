@@ -1,0 +1,43 @@
+#our-service {
+  .img-heart,
+  .img-malaria,
+  .img-peneumonia,
+  .img-diabetes,
+  .img-kideny,
+  .img-breast,
+  .img-liver {
+    background-repeat: no-repeat;
+    height: 300px;
+    /* background-size: cover; */
+    background-position: 50% 80%;
+  }
+  .img-heart {
+    background-image: url("../../../assets/images/heart.png");
+  }
+  .img-malaria {
+    background-image: url("../../../assets/images/malaria.png");
+  }
+  .img-peneumonia {
+    background-image: url("../../../assets/images/pneumonia.png");
+  }
+  .img-diabetes {
+    background-image: url("../../../assets/images/diabetes.png");
+  }
+  .img-kideny {
+    background-image: url("../../../assets/images/kidney.png");
+  }
+  .img-breast {
+    background-image: url("../../../assets/images/breast-cancer.png");
+  }
+  .img-liver {
+    background-image: url("../../../assets/images/liver.png");
+  }
+}
+@media (max-width: 760px) {
+  .img-diabetes,
+  .img-breast,
+  .img-kideny,
+  .img-liver {
+    width: 75% !important;
+  }
+}

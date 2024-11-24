@@ -1,0 +1,131 @@
+/*Start section Home */
+
+#home {
+  h1 {
+    font-weight: 800;
+    text-shadow: 1px 1px 5px #000;
+    width: fit-content !important;
+  }
+  h4 {
+    font-weight: 300;
+    text-shadow: 1px 1px 3px #000;
+    letter-spacing: 0.2rem;
+  }
+
+  .btn-home {
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    .btn {
+      width: 32%;
+    }
+    .btn:hover {
+      border: 1px solid #fff;
+      background: var(--main-color) !important;
+      color: #fff;
+    }
+  }
+}
+
+/*media query Home*/
+
+@media (max-width: 1300px) {
+  h1 {
+    font-size: 4rem !important;
+  }
+  #home {
+    .btn-home {
+      .btn {
+        width: 40%;
+      }
+    }
+  }
+}
+@media (max-width: 1129.98px) {
+  h1 {
+    font-size: 3rem !important;
+  }
+  #home {
+    h4 {
+      font-size: 1rem;
+    }
+    .btn-home {
+      .btn {
+        width: 35%;
+
+        span {
+          font-size: 1.2rem !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1076.98px) {
+  #home {
+    .btn-home {
+      .btn {
+        width: 35%;
+        margin-top: 0rem;
+        span {
+          font-size: 1rem !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 937.98px) {
+  h1 {
+    font-size: 2.7rem !important;
+  }
+  #home {
+    .btn-home {
+      /* padding-left: 0.2rem !important; */
+      .btn {
+        width: 35% !important;
+
+        span {
+          font-size: 0.8rem !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 799.98px) {
+  #home {
+    h1 {
+      font-size: 2rem !important;
+      margin-bottom: 1rem;
+    }
+    .btn-home {
+      .btn {
+        width: 40% !important;
+        margin-top: 0rem;
+        span {
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 589.98px) {
+  #home {
+    .btn-home {
+      flex-direction: column;
+      align-items: center;
+      padding-left: 0 !important;
+
+      .btn {
+        margin: 0 !important;
+        margin-bottom: 2rem !important;
+        width: 90% !important;
+        margin-top: 0rem;
+        span {
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+}
+/*End section Home */

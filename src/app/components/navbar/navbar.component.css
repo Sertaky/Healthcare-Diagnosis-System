@@ -1,0 +1,21 @@
+nav {
+  background: #4a77e9 !important;
+  a {
+    color: #fff !important;
+  }
+}
+.navbar-toggler {
+  border-color: #fff !important ;
+  box-shadow: none !important;
+}
+/*media */
+@media (max-width: 990px) {
+  ul {
+    width: 100% !important;
+    li {
+      a {
+        text-align: center !important;
+      }
+    }
+  }
+}

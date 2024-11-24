@@ -1,0 +1,64 @@
+/* start section Doctor */
+
+#our {
+  min-height: 100vh;
+  .min-height {
+    height: 300px !important;
+  }
+  .img {
+    border: 5px solid #fff;
+    padding: 10px;
+    background-color: #fff;
+    bottom: 80%;
+    left: 25%;
+  }
+  .special {
+    display: block;
+    margin-top: 2.4rem;
+  }
+}
+
+/* media query  */
+@media (max-width: 1399.98px) {
+  #our {
+    .item {
+      width: 100% !important;
+    }
+  }
+}
+@media (max-width: 991.98px) {
+  #our {
+    .item {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      h5 {
+        font-size: 1rem;
+      }
+      h6 {
+        font-size: 0.9rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      .special {
+        margin-top: 2.3rem;
+      }
+    }
+  }
+}
+@media (max-width: 767.98px) {
+  #our {
+    .item {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+      margin-bottom: 6rem !important;
+      .img {
+        width: 25% !important;
+        left: 38%;
+      }
+    }
+  }
+}
+
+/* end section Doctor */

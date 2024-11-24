@@ -1,0 +1,69 @@
+<section id="malaria" class="py-5 mt-5">
+  <div class="container">
+    <div class="title position-relative d-flex mb-5">
+      <span><i class="fa-solid fa-file-signature fa-2xl"></i></span>
+      <h2>Malaria test form</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-6">
+        <div class="img shadow mb-5 w-75 rounded-4 m-auto">
+          <img
+            class="rounded-4 w-100"
+            src="./assets/images/mosquito.jpg"
+            alt="mosquito"
+          />
+        </div>
+        <div class="body position-relative">
+          <p class="text-center">
+            Malaria is a life-threatening disease transmitted through the bite
+            of infected female mosquitoes. It is most common in tropical
+            regions, particularly in Africa. The disease is caused by parasites
+            that multiply in the liver and infect red blood cells, leading to
+            recurring cycles of fever, chills, and flu-like symptoms. Severe
+            cases can result in organ failure and death, especially in
+            vulnerable populations. Diagnosis is done through blood tests, and
+            treatment involves specific antimalarial medications. Prevention
+            measures include using bed nets, indoor spraying, and taking
+            prophylactic medications when traveling to affected areas. Public
+            health efforts to control mosquitoes and promote early diagnosis are
+            crucial in combating malaria.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Please upload cell image</h3>
+        <form (ngSubmit)="uploadImg()" [formGroup]="formImage">
+          <input
+            formControlName="image"
+            class="custom-file-input"
+            type="file"
+            accept="image/*"
+            (change)="selectImg($event)"
+          />
+          <div class="show text-center mt-5">
+            <h3 class="text-start">UPLOADED IMAGE WILL APPEAR HERE</h3>
+            <div class="imgShow mx-auto my-3">
+              <div class="parent" *ngIf="imgUrl">
+                <img class="w-100" [src]="imgUrl" />
+              </div>
+            </div>
+          </div>
+          <div class="w-50 m-auto">
+            <button type="submit" class="btn rounded-4 w-100">
+              Submit
+              <span *ngIf="isLoad"
+                ><i class="fa-solid fa-spinner fa-spin"></i
+              ></span>
+            </button>
+          </div>
+        </form>
+        <div
+          class="alert alert-secondary w-100 rounded-4 mt-5"
+          *ngIf="showResult"
+        >
+          <h2 class="text-center">{{ result }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

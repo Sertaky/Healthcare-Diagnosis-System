@@ -1,0 +1,245 @@
+<section id="heart" class="py-5 mt-5">
+  <div class="container">
+    <div class="title position-relative d-flex mb-5">
+      <span><i class="fa-solid fa-file-signature fa-2xl"></i></span>
+      <h2>heart test form</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-7">
+        <div class="img shadow mb-5 rounded-4">
+          <img
+            class="w-100 rounded-4"
+            src="./assets/images/heart.jpg"
+            alt="Liver"
+          />
+        </div>
+        <div class="body position-relative">
+          <p class="text-center">
+            Heart disease encompasses various conditions that affect the heart
+            and blood vessels, and it is a leading cause of global mortality.
+            Risk factors include high blood pressure, high cholesterol, smoking,
+            obesity, poor diet, inactivity, diabetes, and family history.
+            Symptoms can include chest pain, shortness of breath, fatigue, and
+            palpitations. Management involves early detection, lifestyle
+            changes, medication, and medical interventions when necessary.
+            Education and prevention play significant roles in reducing the
+            impact of heart disease and promoting heart health.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <form
+          class="py-3 rounded-4"
+          [formGroup]="heartData"
+          (ngSubmit)="sendData()"
+        >
+          <div class="form-item d-flex flex-column align-items-center mb-3">
+            <label for="age" class="mb-2 fw-bold w-75">Age:</label>
+            <input
+              formControlName="Age"
+              type="number"
+              id="age"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                heartData.get('Age')?.touched && heartData.get('Age')?.errors
+              "
+              class="alert alert-danger mt-1 rounded-4 w-75"
+            >
+              <p *ngIf="heartData.get('Age')?.getError('required')" class="m-0">
+                Age Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Sex" class="mb-2 fw-bold w-75"
+              >Sex<span class="small">(Male:1, female:0)</span>:</label
+            >
+            <input
+              formControlName="sex"
+              type="number"
+              id="Sex"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                heartData.get('sex')?.touched && heartData.get('sex')?.errors
+              "
+              class="alert alert-danger mt-1 rounded-4 w-75"
+            >
+              <p class="m-0" *ngIf="heartData.get('sex')?.getError('required')">
+                Sex Is required
+              </p>
+              <p class="m-0" *ngIf="heartData.get('sex')?.getError('pattern')">
+                Sex Must Be 0 Or 1
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Chest pain type" class="mb-2 fw-bold w-75"
+              >trestbps:</label
+            >
+            <input
+              formControlName="trestbps"
+              type="number"
+              id="Chest pain type"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                heartData.get('trestbps')?.touched &&
+                heartData.get('trestbps')?.errors
+              "
+              class="alert alert-danger mt-1 rounded-4 w-75"
+            >
+              <p
+                class="m-0"
+                *ngIf="heartData.get('trestbps')?.getError('required')"
+              >
+                trestbps Is Required
+              </p>
+              <p
+                class="m-0"
+                *ngIf="heartData.get('trestbps')?.getError('pattern')"
+              >
+                Irestbps Must Be An Integer
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Resting Blood preasure" class="mb-2 fw-bold w-75"
+              >chol :</label
+            >
+            <input
+              formControlName="chol"
+              type="number"
+              id="Resting Blood preasure"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                heartData.get('chol')?.touched && heartData.get('chol')?.errors
+              "
+              class="alert alert-danger mt-1 rounded-4 w-75"
+            >
+              <p
+                class="m-0"
+                *ngIf="heartData.get('chol')?.getError('required')"
+              >
+                chol Is Required
+              </p>
+              <p class="m-0" *ngIf="heartData.get('chol')?.getError('pattern')">
+                Chol Must Be An Integer
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Serum" class="mb-2 fw-bold w-75"> thalach :</label>
+            <input
+              formControlName="thalach"
+              type="number"
+              id="Serum"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                heartData.get('thalach')?.touched &&
+                heartData.get('thalach')?.errors
+              "
+              class="alert alert-danger mt-1 rounded-4 w-75"
+            >
+              <p
+                class="m-0"
+                *ngIf="heartData.get('thalach')?.getError('required')"
+              >
+                Thalach Is Required
+              </p>
+              <p
+                class="m-0"
+                *ngIf="heartData.get('thalach')?.getError('pattern')"
+              >
+                Thalach Must Be An Integer
+              </p>
+            </div>
+          </div>
+          <!-- <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="aspartate_aminotransferase" class="mb-2 fw-bold w-75"
+              >fasting blood sugar 120 mg/dl
+              <span class="small">(1 = true; 0 = false)</span> :</label
+            >
+            <input
+              type="text"
+              id="aspartate_aminotransferase"
+              class="form-control w-75 rounded-4"
+            />
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Resting" class="mb-2 fw-bold w-75"
+              >Resting electrocardiographic results:</label
+            >
+            <input
+              type="text"
+              id="Resting"
+              class="form-control w-75 rounded-4"
+            />
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Maximum" class="mb-2 fw-bold w-75"
+              >Maximum heart rate achieved:</label
+            >
+            <input
+              type="text"
+              id="Maximum"
+              class="form-control w-75 rounded-4"
+            />
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Exercise" class="mb-2 fw-bold w-75"
+              >Exercise induced angina
+              <span class="small">(1 = yes; 0 = no)</span> :</label
+            >
+            <input
+              type="text"
+              id="Exercise"
+              class="form-control w-75 rounded-4"
+            />
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="ST" class="mb-2 fw-bold w-75"
+              >ST depression induced by exercise relative to rest :</label
+            >
+            <input type="text" id="ST" class="form-control w-75 rounded-4" />
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="slope" class="mb-2 fw-bold w-75"
+              >The slope of the peak exercise ST segment:</label
+            >
+            <input type="text" id="slope" class="form-control w-75 rounded-4" />
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="major" class="mb-2 fw-bold w-75"
+              >Number of major vessels (0-3) colored by flourosopy:</label
+            >
+            <input type="text" id="major" class="form-control w-75 rounded-4" />
+          </div> -->
+          <div class="submit d-flex justify-content-center">
+            <button [disabled]="heartData.invalid" class="btn rounded-4">
+              Analize
+              <span *ngIf="isLoad"
+                ><i class="fa-solid fa-spinner fa-spin"></i
+              ></span>
+            </button>
+          </div>
+        </form>
+        <div
+          class="alert alert-secondary w-100 rounded-4 mt-5"
+          *ngIf="showResult"
+        >
+          <h2 class="text-center">{{ title }}</h2>
+          <h3>Risk Factor : {{ result }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,323 @@
+<section id="liver" class="py-5 mt-5">
+  <div class="container">
+    <div class="title position-relative d-flex mb-5">
+      <span><i class="fa-solid fa-file-signature fa-2xl"></i></span>
+      <h2>LIVER TEST FORM</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-6">
+        <div class="img shadow mb-5 rounded-4">
+          <img
+            class="w-100 rounded-4"
+            src="./assets/images/LIVER-.png"
+            alt="Liver"
+          />
+        </div>
+        <div class="body position-relative">
+          <p class="text-center">
+            Liver disease encompasses various conditions that impact the normal
+            functioning of the liver. Causes can include viral infections,
+            excessive alcohol consumption, fatty liver disease, autoimmune
+            disorders, genetic factors, or certain medications. Complications
+            can range from liver cirrhosis to liver failure or cancer. Symptoms
+            vary but may include fatigue, jaundice, abdominal pain, swelling,
+            and changes in appetite or weight. Management involves early
+            detection, lifestyle changes, medication, and sometimes liver
+            transplantation. Prevention measures include regular check-ups,
+            hepatitis vaccination, and avoiding toxins. Education about risk
+            factors and liver health is vital in preventing and effectively
+            managing liver disease.
+          </p>
+        </div>
+        <div class="alert alert-secondary mt-5 rounded-4" *ngIf="showResult">
+          <h2 class="text-center py-3">{{ result }}</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form
+          class="py-3 rounded-4"
+          [formGroup]="liverData"
+          (ngSubmit)="creatLiverData()"
+        >
+          <div class="form-item d-flex flex-column align-items-center mb-3">
+            <label for="age" class="mb-2 fw-bold w-75">Age:</label>
+            <input
+              formControlName="age"
+              type="number"
+              id="age"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              class="alert alert-danger w-75 rounded-4 mt-2"
+              *ngIf="
+                liverData.get('age')?.touched && liverData.get('age')?.errors
+              "
+            >
+              <p *ngIf="liverData.get('age')?.getError('required')" class="m-0">
+                Age is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="bilirubin" class="mb-2 fw-bold w-75"
+              >Total_Bilirubin:</label
+            >
+            <input
+              formControlName="total_bilirubin"
+              type="number"
+              id="bilirubin"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                liverData.get('total_bilirubin')?.touched &&
+                liverData.get('total_bilirubin')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-2"
+            >
+              <p
+                class="m-0"
+                *ngIf="liverData.get('total_bilirubin')?.getError('required')"
+              >
+                Total_Bilirubin Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="direct-bilirubin" class="mb-2 fw-bold w-75"
+              >Direct_Bilirubin:</label
+            >
+            <input
+              formControlName="direct_bilirubin"
+              type="number"
+              id="direct-bilirubin"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              class="alert alert-danger w-75 rounded-4 mt-2"
+              *ngIf="
+                liverData.get('direct_bilirubin')?.touched &&
+                liverData.get('direct_bilirubin')?.errors
+              "
+            >
+              <p
+                class="m-0"
+                *ngIf="liverData.get('direct_bilirubin')?.getError('required')"
+              >
+                Direct_Bilirubin Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="alkaline_phosphotase" class="mb-2 fw-bold w-75"
+              >Alkaline_Phosphotase:</label
+            >
+            <input
+              formControlName="alkphos_alkaline_phosphotase"
+              type="number"
+              id="alkaline_phosphotase"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              class="alert alert-danger w-75 rounded-4 mt-2"
+              *ngIf="
+                liverData.get('alkphos_alkaline_phosphotase')?.touched &&
+                liverData.get('alkphos_alkaline_phosphotase')?.errors
+              "
+            >
+              <p
+                class="m-0"
+                *ngIf="
+                  liverData
+                    .get('alkphos_alkaline_phosphotase')
+                    ?.getError('required')
+                "
+              >
+                Alkaline_Phosphotase Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="alamine_aminotransferase" class="mb-2 fw-bold w-75"
+              >Alamine_Aminotransferase:</label
+            >
+            <input
+              formControlName="alamine_aminotransferase"
+              type="number"
+              id="alamine_aminotransferase"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                liverData.get('alamine_aminotransferase')?.touched &&
+                liverData.get('alamine_aminotransferase')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-2"
+            >
+              <p
+                *ngIf="
+                  liverData
+                    .get('alamine_aminotransferase')
+                    ?.getError('required')
+                "
+                class="m-0"
+              >
+                Alamine_Aminotransferase Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="aspartate_aminotransferase" class="mb-2 fw-bold w-75"
+              >Aspartate_Aminotransferase:</label
+            >
+            <input
+              formControlName="aspartate_aminotransferase"
+              type="number"
+              id="aspartate_aminotransferase"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                liverData.get('aspartate_aminotransferase')?.touched &&
+                liverData.get('aspartate_aminotransferase')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-2"
+            >
+              <p
+                *ngIf="
+                  liverData
+                    .get('aspartate_aminotransferase')
+                    ?.getError('required')
+                "
+                class="m-0"
+              >
+                Aspartate_Aminotransferase Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="total_protiens" class="mb-2 fw-bold w-75"
+              >Total_Protiens:</label
+            >
+            <input
+              formControlName="total_protein"
+              type="number"
+              id="total_protiens"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                liverData.get('total_protein')?.touched &&
+                liverData.get('total_protein')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-2"
+            >
+              <p
+                *ngIf="liverData.get('total_protein')?.getError('required')"
+                class="m-0"
+              >
+                Total_Protiens Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="albumin" class="mb-2 fw-bold w-75">Albumin:</label>
+            <input
+              formControlName="albumin"
+              type="number"
+              id="albumin"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                liverData.get('albumin')?.touched &&
+                liverData.get('albumin')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-2"
+            >
+              <p
+                *ngIf="liverData.get('albumin')?.getError('required')"
+                class="m-0"
+              >
+                Albumin Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="albumin_and_globulin_ratio" class="mb-2 fw-bold w-75"
+              >Albumin_and_Globulin_Ratio:</label
+            >
+            <input
+              formControlName="albumin_and_globulin_ratio"
+              type="number"
+              id="albumin_and_globulin_ratio"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                liverData.get('albumin_and_globulin_ratio')?.touched &&
+                liverData.get('albumin_and_globulin_ratio')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-2"
+            >
+              <p
+                *ngIf="
+                  liverData
+                    .get('albumin_and_globulin_ratio')
+                    ?.getError('required')
+                "
+                class="m-0"
+              >
+                Albumin_and_Globulin_Ratio Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="gender" class="mb-2 fw-bold w-75"
+              >Gender (Male: 1, Female: 0) :</label
+            >
+            <input
+              formControlName="gender"
+              type="text"
+              id="gender"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                liverData.get('gender')?.touched &&
+                liverData.get('gender')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-2"
+            >
+              <p
+                *ngIf="liverData.get('gender')?.getError('required')"
+                class="m-0"
+              >
+                Gender Is Required
+              </p>
+              <p
+                *ngIf="liverData.get('gender')?.getError('pattern')"
+                class="m-0"
+              >
+                Please ensure that your input contains only letters from the
+                alphabet (A-Z or a-z)
+              </p>
+            </div>
+          </div>
+          <div class="submit d-flex justify-content-center">
+            <button
+              type="submit"
+              [disabled]="liverData.invalid"
+              class="btn rounded-4"
+            >
+              Analize
+              <span *ngIf="isLoad"
+                ><i class="fa-solid fa-spinner fa-spin"></i
+              ></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

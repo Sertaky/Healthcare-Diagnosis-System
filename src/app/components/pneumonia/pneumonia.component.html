@@ -1,0 +1,64 @@
+<section id="pen" class="py-5 mt-5">
+  <div class="container">
+    <div class="title position-relative d-flex mb-5">
+      <span><i class="fa-solid fa-file-signature fa-2xl"></i></span>
+      <h2>Pneumonia test form</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-6">
+        <div class="img shadow mb-5 w-75 rounded-4 m-auto">
+          <img class="rounded-4 w-100" src="./assets/images/pre.jpg" alt="" />
+        </div>
+        <div class="body position-relative">
+          <p class="text-center">
+            Pneumonia is an infection that causes inflammation in the air sacs
+            of the lungs, leading to fluid or pus accumulation. It can be caused
+            by bacteria, viruses, or fungi and is typically spread through
+            respiratory droplets. Symptoms include cough, fever, chest pain,
+            difficulty breathing, fatigue, and confusion. Diagnosis involves
+            physical examination, chest X-rays, and laboratory tests. Treatment
+            depends on the cause and severity and may include antibiotics,
+            antivirals, or supportive care. Prevention measures include
+            vaccinations, hand hygiene, and avoiding respiratory infections.
+            Early detection and prompt treatment are crucial for managing
+            pneumonia effectively and preventing complications.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>Please upload the X-Ray of Person</h3>
+        <form [formGroup]="formImg" (ngSubmit)="uploadImg()">
+          <input
+            formControlName="image"
+            class="custom-file-input"
+            type="file"
+            accept="image/*"
+            (change)="selectImg($event)"
+          />
+          <div class="show text-center mt-5">
+            <h3 class="text-start">UPLOADED IMAGE WILL APPEAR HERE</h3>
+            <div class="imgShow mx-auto my-3">
+              <div class="parent" *ngIf="imgUrl">
+                <img class="w-100" [src]="imgUrl" />
+              </div>
+            </div>
+          </div>
+          <div class="w-50 m-auto">
+            <button type="submit" class="btn rounded-4 w-100">
+              Submit
+              <span *ngIf="isLoad"
+                ><i class="fa-solid fa-spinner fa-spin"></i
+              ></span>
+            </button>
+          </div>
+        </form>
+        <div
+          class="alert alert-secondary w-100 rounded-4 mt-5"
+          *ngIf="showResult"
+        >
+          <h2 class="text-center">{{ result }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

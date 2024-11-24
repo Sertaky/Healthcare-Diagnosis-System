@@ -1,0 +1,85 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: #004aad;
+}
+
+/*  font style */
+
+/*font type :LeagueSpartan */
+
+@font-face {
+  font-family: leage;
+  src: url("./assets/fonts/League-spartan/LeagueSpartan-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: bb;
+  src: url("./assets/fonts/bt/RubikBubbles-Regular.ttf");
+}
+
+/*font type : Montserrat*/
+
+@font-face {
+  font-family: montserrat;
+  src: url("./assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf");
+}
+/* font type : cardo */
+@font-face {
+  font-family: cardo;
+  src: url("./assets/fonts/cardo/Cardo-Bold.ttf");
+}
+/*font type :volkhov*/
+
+@font-face {
+  font-family: volk;
+  src: url("./assets/fonts/volk/Volkhov-Regular.ttf");
+}
+/* font type : questeriak */
+
+@font-face {
+  font-family: questerial;
+  src: url("./assets/fonts/Questrial/Questrial-Regular.ttf");
+}
+/* font type : libre */
+@font-face {
+  font-family: libre;
+  src: url("./assets/fonts/libre/LibreBaskerville-Regular.ttf");
+}
+.libre {
+  font-family: libre;
+}
+/* global classes */
+
+.leage {
+  font-family: leage;
+}
+.bb {
+  font-family: bb;
+}
+.mont {
+  font-family: montserrat;
+}
+.cardo {
+  font-family: cardo;
+}
+.volk {
+  font-family: volk;
+}
+.quest {
+  font-family: questerial;
+}
+.gradient {
+  background: hsla(214, 100%, 34%, 1);
+  background: linear-gradient(
+    90deg,
+    hsla(214, 100%, 34%, 1) 0%,
+    hsla(287, 71%, 66%, 1) 100%
+  );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#004AAD", endColorstr="#CB6CE6", GradientType=1 );
+}
+.main-color {
+  color: var(--main-color);
+}
+.pointer {
+  cursor: pointer;
+}

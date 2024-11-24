@@ -1,0 +1,259 @@
+<section id="diabetes" class="py-5 mt-5">
+  <div class="container">
+    <div class="title position-relative d-flex mb-5">
+      <span><i class="fa-solid fa-file-signature fa-2xl"></i></span>
+      <h2>DIABETES TEST FORM</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-6">
+        <div class="img shadow mb-5 rounded-4">
+          <img
+            class="w-100 rounded-4"
+            src="./assets/images/diabetic-.jpg"
+            alt="Liver"
+          />
+        </div>
+        <div class="body position-relative">
+          <p class="text-center">
+            Diabetes is a chronic condition characterized by high blood sugar
+            levels due to insufficient insulin production or utilization. It can
+            lead to complications affecting multiple organs. Effective
+            management through medication, lifestyle adjustments, and regular
+            monitoring is vital for controlling the condition and reducing
+            complications. Early detection and proactive care are key to
+            maintaining overall health.
+          </p>
+        </div>
+        <div
+          class="alert alert-secondary rounded-4 mt-5 text-center"
+          *ngIf="showResult"
+        >
+          <h2 class="m-0 display-2">{{ result }}</h2>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form
+          class="py-3 rounded-4"
+          (ngSubmit)="sendData()"
+          [formGroup]="diabetesData"
+        >
+          <div class="form-item d-flex flex-column align-items-center mb-3">
+            <label for="pregnancies" class="mb-2 fw-bold w-75"
+              >Number of pregnancies:</label
+            >
+            <input
+              formControlName="pregnancies"
+              type="number"
+              id="pregnancies"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('pregnancies')?.touched &&
+                diabetesData.get('pregnancies')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                *ngIf="diabetesData.get('pregnancies')?.getError('required')"
+                class="m-0"
+              >
+                Number of pregnancies Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="bilirubin" class="mb-2 fw-bold w-75"
+              >Glucose <span class="small">(mg/dl)</span> :</label
+            >
+            <input
+              formControlName="glucose"
+              type="number"
+              id="bilirubin"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('glucose')?.touched &&
+                diabetesData.get('glucose')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                *ngIf="diabetesData.get('glucose')?.getError('required')"
+                class="m-0"
+              >
+                Glucose Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Blood" class="mb-2 fw-bold w-75"
+              >Blood preasure <span class="small">(mmhg)</span> :</label
+            >
+            <input
+              formControlName="bloodpressure"
+              type="number"
+              id="Blood"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('bloodpressure')?.touched &&
+                diabetesData.get('bloodpressure')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                *ngIf="diabetesData.get('bloodpressure')?.getError('required')"
+                class="m-0"
+              >
+                Blood preasure Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Skin" class="mb-2 fw-bold w-75"
+              >Skin thickness <span class="small">(mm)</span> :</label
+            >
+            <input
+              formControlName="skinthickness"
+              type="number"
+              id="Skin"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('skinthickness')?.touched &&
+                diabetesData.get('skinthickness')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                class="m-0"
+                *ngIf="diabetesData.get('skinthickness')?.getError('required')"
+              >
+                Skin thickness Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Insulin" class="mb-2 fw-bold w-75"
+              >Insulin level<span class="small">(IU/ml)</span> :</label
+            >
+            <input
+              formControlName="insulin"
+              type="number"
+              id="Insulin"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('insulin')?.touched &&
+                diabetesData.get('insulin')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                *ngIf="diabetesData.get('insulin')?.getError('required')"
+                class="m-0"
+              >
+                Insulin level Is required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Body" class="mb-2 fw-bold w-75"
+              >Body mass index <span class="small">(kg/m^2)</span> :</label
+            >
+            <input
+              formControlName="bmi"
+              type="number"
+              id="Body"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('bmi')?.touched &&
+                diabetesData.get('bmi')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                *ngIf="diabetesData.get('bmi')?.getError('required')"
+                class="m-0"
+              >
+                Body Mass Is Required
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="pedigree" class="mb-2 fw-bold w-75"
+              >Diabetes pedigree function:</label
+            >
+            <input
+              formControlName="dpf"
+              type="number"
+              id="pedigree"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('dpf')?.touched &&
+                diabetesData.get('dpf')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                *ngIf="diabetesData.get('dpf')?.getError('required')"
+                class="m-0"
+              >
+                Diabetes Pedigree Is Required
+              </p>
+              <p
+                *ngIf="diabetesData.get('dpf')?.getError('pattern')"
+                class="m-0"
+              >
+                Diabetes Pedigree Must Be From 0 to 2
+              </p>
+            </div>
+          </div>
+          <div class="form-item d-flex flex-column align-items-center my-3">
+            <label for="Age" class="mb-2 fw-bold w-75"
+              >Age <span class="small">(years)</span> :</label
+            >
+            <input
+              formControlName="age"
+              type="number"
+              id="Age"
+              class="form-control w-75 rounded-4"
+            />
+            <div
+              *ngIf="
+                diabetesData.get('age')?.touched &&
+                diabetesData.get('age')?.errors
+              "
+              class="alert alert-danger w-75 rounded-4 mt-1"
+            >
+              <p
+                *ngIf="diabetesData.get('age')?.getError('required')"
+                class="m-0"
+              >
+                Age Is Required
+              </p>
+            </div>
+          </div>
+
+          <div class="submit d-flex justify-content-center">
+            <button [disabled]="diabetesData.invalid" class="btn rounded-4">
+              Analize
+              <span *ngIf="isLoad"
+                ><i class="fa-solid fa-spinner fa-spin"></i
+              ></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

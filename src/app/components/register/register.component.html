@@ -1,0 +1,137 @@
+<section class="py-5 w-75 m-auto">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="register w-75 m-auto py-5">
+        <h3>Register</h3>
+        <form (ngSubmit)="handleForm()" [formGroup]="register">
+          <div class="form-item">
+            <label for="name" class="my-2">Name</label>
+            <input
+              id="name"
+              formControlName="name"
+              type="text"
+              class="form-control w-100"
+            />
+            <div
+              class="alert alert-danger w-100 mt-2"
+              *ngIf="
+                register.get('name')?.errors && register.get('name')?.touched
+              "
+            >
+              <p *ngIf="register.get('name')?.getError('required')" class="m-0">
+                Name Is Required
+              </p>
+              <p *ngIf="register.get('name')?.getError('pattern')" class="m-0">
+                Please enter a valid name. Only alphabetical characters are
+                allowed, and the name can include spaces.
+              </p>
+            </div>
+          </div>
+          <div class="form-item my-2">
+            <label for="email" class="my-2">Email</label>
+            <input
+              id="email"
+              formControlName="email"
+              type="email"
+              class="form-control w-100"
+            />
+            <div
+              class="alert alert-danger w-100 mt-2"
+              *ngIf="
+                register.get('email')?.errors && register.get('email')?.touched
+              "
+            >
+              <p
+                *ngIf="register.get('email')?.getError('required')"
+                class="m-0"
+              >
+                Email Is Required
+              </p>
+              <p *ngIf="register.get('email')?.getError('pattern')" class="m-0">
+                Please enter a valid email address.
+              </p>
+            </div>
+          </div>
+          <div class="form-item my-2 position-relative">
+            <label for="password" class="my-2">Password</label>
+            <input
+              id="password"
+              formControlName="password"
+              [type]="type"
+              class="form-control w-100 d-block"
+            />
+            <span class="position position-absolute" (click)="showPass()"
+              ><i class="fa-regular fa-eye"></i
+            ></span>
+            <div
+              class="alert alert-danger w-100 mt-2"
+              *ngIf="
+                register.get('password')?.errors &&
+                register.get('password')?.touched
+              "
+            >
+              <p
+                *ngIf="register.get('password')?.getError('required')"
+                class="m-0"
+              >
+                password Is Required
+              </p>
+              <p
+                *ngIf="register.get('password')?.getError('pattern')"
+                class="m-0"
+              >
+                Password must be at least 8 characters long and include at least
+                one letter and one digit. Special characters @$!%*?& are
+                allowed.
+              </p>
+            </div>
+          </div>
+          <div class="form-item my-2">
+            <label for="password_confirmation" class="my-2"
+              >Confirm Password</label
+            >
+            <input
+              id="password_confirmation"
+              formControlName="password_confirmation"
+              type="password"
+              class="form-control w-100"
+            />
+            <div
+              class="alert alert-danger w-100 mt-2"
+              *ngIf="
+                register.get('password_confirmation')?.errors &&
+                register.get('password_confirmation')?.touched
+              "
+            >
+              <p
+                *ngIf="
+                  register.get('password_confirmation')?.getError('required')
+                "
+                class="m-0"
+              >
+                password Is Required
+              </p>
+              <p
+                *ngIf="
+                  register.get('password_confirmation')?.getError('misMatch')
+                "
+                class="m-0"
+              >
+                Password must be matched
+              </p>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary w-100 mt-3">
+            Register
+            <span *ngIf="isLoad"
+              ><i class="fa-solid fa-spinner fa-spin" style="color: #000000"></i
+            ></span>
+          </button>
+          <div class="alert alert-danger w-100" *ngIf="errMasge">
+            <p>{{ errMasge }}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+<main>
+  <!-- section Home -->
+  <section id="home" class="gradient">
+    <div class="row d-flex gx-0">
+      <div class="col-md-6">
+        <div class="d-flex flex-column justify-content-center vh-100">
+          <div class="title-home px-5">
+            <div class="container">
+              <h1
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="100"
+                class="leage fw-bolder text-white display-1"
+              >
+                Making Health Accessible And Affodable
+              </h1>
+              <h4
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="200"
+                class="font-style-second leage text-white"
+              >
+                making health care better together.
+              </h4>
+            </div>
+          </div>
+          <div class="btn-home d-flex mt-5 ps-5">
+            <button
+              [routerLink]="['/services']"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-back"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+              class="btn me-3 py-3 rounded-5 bg-white main-color"
+            >
+              <span class="fs-4 mont"> OUR SERVICES</span>
+            </button>
+            <button
+              [routerLink]="['/about']"
+              data-aos="fade-up"
+              data-aos-easing="ease-in-back"
+              data-aos-duration="1000"
+              data-aos-delay="500"
+              class="btn ms-3 py-3 rounded-5 bg-white main-color justify-content-between"
+            >
+              <span class="fs-4 mont"> ABOUT US</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 pe-0">
+        <div class="vh-100 d-flex align-items-center">
+          <img
+            data-aos="fade-up"
+            data-aos-duration="5000"
+            class="w-100 vh-100"
+            src="./assets/images/doctors-female-male-discussing-looking-each-other.jpg"
+            alt="doctors-female-male-discussing-looking-each-other"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
