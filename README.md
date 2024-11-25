@@ -1,4 +1,85 @@
-# HealtCare
+# Healthcare Diagnosis System
+
+The **Healthcare Diagnosis System** is a comprehensive AI-powered web application designed to assist healthcare professionals in diagnosing six critical health conditions. By integrating state-of-the-art machine learning and deep learning models, the system provides accurate and efficient predictions to improve medical decision-making and patient care.
+
+---
+
+## **Features**
+
+1. **Multi-Disease Diagnosis**:
+   - Supports predictions for six conditions:
+     - Breast Cancer
+     - Chronic Kidney Disease (CKD)
+     - Diabetes
+     - Heart Disease
+     - Liver Disease
+     - Pneumonia and Malaria (image-based diagnosis)
+
+2. **AI-Powered Models**:
+   - Utilizes tailored machine learning models for structured clinical data.
+   - Employs deep learning models for medical image analysis (e.g., X-rays, blood smear images).
+
+3. **User-Friendly Interface**:
+   - Angular-based frontend for seamless interaction.
+   - Provides real-time predictions and actionable insights.
+
+4. **Scalable Backend**:
+   - Flask-based RESTful API for processing patient data and serving model predictions.
+   - Modular and extensible architecture to accommodate future models.
+
+---
+
+## **Technologies Used**
+
+- **Frontend**: Angular
+- **Backend**: Flask
+- **Machine Learning Frameworks**: 
+  - scikit-learn (Logistic Regression, Random Forests, XGBoost)
+  - TensorFlow (Deep Learning)
+- **Deployment**:
+  - Docker containerization for scalable deployment.
+  - Cloud hosting or local servers.
+
+---
+
+## **Machine Learning Models**
+
+### 1. **Breast Cancer Prediction**
+   - **Description**: Classifies tumors as malignant or benign based on clinical measurements.
+   - **Model**: Random Forest / Logistic Regression.
+   - **Accuracy**: 98.24%.
+
+### 2. **Chronic Kidney Disease Classification**
+   - **Description**: Detects CKD using biomarkers such as creatinine and glucose levels.
+   - **Model**: Decision Tree Classifier.
+   - **Purpose**: Early detection to enable timely treatment.
+
+### 3. **Diabetes Prediction**
+   - **Description**: Predicts diabetes risk based on clinical data like BMI and glucose levels.
+   - **Model**: Logistic Regression / Support Vector Machine.
+
+### 4. **Heart Disease Prediction**
+   - **Description**: Identifies heart disease risk based on factors like cholesterol levels and blood pressure.
+   - **Model**: Ensemble classifiers for robust predictions.
+
+### 5. **Liver Disease Classification**
+   - **Description**: Classifies liver diseases using XGBoost with hyperparameter tuning.
+   - **Model**: XGBoost.
+   - **Accuracy**: 85%.
+
+### 6. **Pneumonia and Malaria Detection**
+   - **Description**: Analyzes X-ray images for pneumonia and blood smear images for malaria detection.
+   - **Model**: Convolutional Neural Networks (CNNs).
+   - **Framework**: TensorFlow.
+
+---
+
+## **Setup and Installation**
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Sertaky/Healthcare-Diagnosis-System.git
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
