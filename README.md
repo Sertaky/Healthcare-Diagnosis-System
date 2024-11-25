@@ -74,11 +74,6 @@ The **Healthcare Diagnosis System** is a comprehensive AI-powered web applicatio
 
 ---
 
-## **Setup and Installation**
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Sertaky/Healthcare-Diagnosis-System.git
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
@@ -103,24 +98,32 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Navigate to the Project Directory:
+## **Setup and Installation**
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Sertaky/Healthcare-Diagnosis-System.git
+
+2. **Navigate to the Project Directory:
 
 cd Healthcare-Diagnosis-System
-Install Backend Dependencies:
 
+
+3. **Install Backend Dependencies:
 
 pip install -r requirements.txt
-Install Frontend Dependencies:
 
+4. Install Frontend Dependencies:
 
 npm install
-Run the Backend Server:
 
+5. **Run the Backend Server:
 
 python app.py
-Run the Frontend:
 
-ng serve
+6. **Run the Frontend:
+
+ng serve or ng s -o
 The application will be accessible at http://localhost:4200/.
 
 ## Further help
